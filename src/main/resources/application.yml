@@ -1,0 +1,62 @@
+server:
+  port: 8081
+# 数据库
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://172.16.10.5:1433;databaseName=S_深圳九星_2023_04_04
+          username: sa
+          password: Founder123
+        slave:
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://172.16.10.5:1433;databaseName=PrintERP_Reports
+          username: sa
+          password: Founder123
+    druid:
+      initial-size: 10
+      min-idle: 5
+      max-active: 50
+      # 配置监控统计拦截的filters
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      # 配置一个管理后台的servlet
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: 123456
+        reset-enable: false
+        allow: true
+mybatis-plus:
+  mapper-locations: classpath:mapper/*xml
+  global-config:
+    db-config:
+      id-type: assign_uuid
+      capital-mode: false
+    banner: false
+  configuration:
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
+  pagehelper:
+    helperDialect: sqlserver
+    reasonable: true
+    supportMethodsArguments: true
+    autoRuntimeDialect: true
+    closeConn: true
+    autoDialect: true
+    offsetAsPageNum: true
+    rowBoundsWithCount: true
+    pageSizeZero: true
+    returnPageInfo: check
+    banner: false
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org.springframework: error
+
+

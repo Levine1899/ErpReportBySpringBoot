@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--logback输出的日志文件，默认会放到“启动进程”的目录下面-->
+<!-- 级别从高到低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL -->
+<!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 -->
+<!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 -->
+<!-- scan 当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。 -->
+<!-- scanPeriod 设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 -->
+<!-- debug 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <!-- 动态日志级别 -->
+    <jmxConfigurator/>
+
+    <!-- 定义日志文件 输出位置 -->
+    <property name="log.dir" value="../logs/report/value"/>
+    <!-- 定义日志文件 输出格式-->
+    <property name="log.pattern"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{80}.%method:%L - %msg%n"/>
+
+    <!-- 定义日志文件 输出格式，控制台带颜色-->
+    <property name="log.colorPattern"
+              value="%magenta(%d{yyyy-MM-dd HH:mm:ss.SSS}) %yellow([%thread]) %highlight(%-5level) %green(%logger{80}.%method:%L) - %msg%n"/>
+    <!-- 日志最大的历史 30天 -->
+    <property name="log.maxHistory" value="7"/>
+
+    <!--日志最大文件 2MB-->
+    <property name="log.maxFileSize" value="2MB"/>
+
+    <!--日志所有文件总和不能超过 200MB-->
+    <property name="log.totalSizeCap" value="200MB"/>
+
+    <!-- ConsoleAppender 控制台输出日志 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                <!-- 设置日志输出格式 -->
+                ${log.colorPattern}
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.dir}/report-value.log</file>
+        <!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责出发滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--日志输出位置 可相对、和绝对路径 -->
+            <fileNamePattern>
+                ${log.dir}/datasync.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <!-- 可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件假设设置每个月滚动，且<log.maxHistory>是6， 则只保存最近6个月的文件，删除之前的旧文件。注意，删除旧文件是，那些为了归档而创建的目录也会被删除 -->
+            <maxHistory>${log.maxHistory}</maxHistory>
+            <!--根据文件大小处理-->
+            <!--每个文件的大小限制-->
+            <maxFileSize>${log.maxFileSize}</maxFileSize>
+            <!--该滚动策略日志的总大小，超过的日志会被清除-->
+            <totalSizeCap>${log.totalSizeCap}</totalSizeCap>
+            <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+            </timeBasedFileNamingAndTriggeringPolicy>-->
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--Dev 开发环境-->
+    <springProfile name="dev">
+        <logger name="mapper" level="DEBUG" additivity="false"/>
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org.apache.cxf" level="INFO"/>
+        <logger name="org.mybatis" level="INFO"/>
+        <logger name="org.quartz" level="ERROR"/>
+        <logger name="org.apache.commons" level="ERROR"/>
+        <logger name="druid.sql" level="INFO"/>
+        <logger name="org.wf.jwtp" level="DEBUG"/>
+        <root>
+            <level value="DEBUG"/>
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <!--Test 测试环境-->
+    <springProfile name="test">
+        <root>
+            <level value="INFO"/>
+            <!--文件输出-->
+            <appender-ref ref="ROLLING"/>
+        </root>
+    </springProfile>
+
+    <!--Prod 生产环境-->
+    <springProfile name="prod">
+        <logger name="mapper" level="WARN" additivity="false"/>
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org.apache.cxf" level="ERROR"/>
+        <logger name="org.mybatis" level="WARN"/>
+        <logger name="org.quartz" level="ERROR"/>
+        <logger name="org.apache.commons" level="ERROR"/>
+        <logger name="druid.sql" level="ERROR"/>
+        <logger name="org.thymeleaf" level="ERROR"/>
+        <root>
+            <level value="INFO"/>
+            <!-- 文件输出 -->
+            <appender-ref ref="ROLLING"/>
+        </root>
+    </springProfile>
+</configuration>
