@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3动态背景登录框代码</title>
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
+    <script type="text/javascript" src="../js/jquery2.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/ckform.js"></script> 
+    <script type="text/javascript" src="../js/pdf.js"></script>
+    <link rel="stylesheet" href="../Css/zhijianstyle.css">
+<body>
+<h1>PDF.js 'Hello, world!' example</h1>
+
+<canvas id="the-canvas"></canvas>
+
+</body>
+<script type="text/javascript">
+aa();
+function aa (){
+var url = '第二篇.pdf';
+
+PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+
+var loadingTask = PDFJS.getDocument(url);
+console.log(loadingTask);
+loadingTask.promise.then(function(pdf) {
+console.log('PDF loaded');
+
+// Fetch the first page
+var pageNumber = 1;
+pdf.getPage(pageNumber).then(function(page) {
+ console.log('Page loaded');
+ alert(1);
+ var scale = 1.5;
+ var viewport = page.getViewport(scale);
+
+ // Prepare canvas using PDF page dimensions
+ var canvas = document.getElementById('the-canvas');
+ var context = canvas.getContext('2d');
+ canvas.height = viewport.height;
+ canvas.width = viewport.width;
+
+ // Render PDF page into canvas context
+ var renderContext = {
+   canvasContext: context,
+   viewport: viewport
+ };
+ var renderTask = page.render(renderContext);
+ renderTask.then(function () {
+   console.log('Page rendered');
+ });
+});
+}, function (reason) {
+// PDF loading error
+console.error(reason);
+});
+
+}
+</script>
+</html>

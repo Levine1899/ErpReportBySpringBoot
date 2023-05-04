@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<link rel="stylesheet" type="text/css" href="../Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/style.css" />
+    <script type="text/javascript" src="../js/jquery2.js"></script>
+   <!--  <script type="text/javascript" src="js/jquery2.sorted.js"></script> -->
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/ckform.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+  </head>
+  <style type="text/css">
+        body {font-size: 20px;
+            font-size: 20px;
+            padding-bottom: 40px;
+            background-color:#e9e7ef;
+        }
+        .top3 {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+
+
+        }
+    </style>
+<body>
+<div class="top3">
+    <table id="table" class="table table-bordered table-hover definewidth m10">
+        <thead>
+        <tr>
+            <th>状态</th>
+            <th>采购单号</th>
+            <th>质检单号</th>
+            <th>供应商</th>
+            <th>采购员</th>
+            <th>制单人</th>
+            <th>制单日期</th>
+            <th>备注</th>
+            <th>到货日期</th>
+        </tr>
+        </thead>
+
+    </table>
+</div>
+    
+    
+     <script type="text/javascript" src="../js/echarts.js"></script>
+	<script type="text/javascript"src="../js/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript">
+      aa();
+      var html = [{"ID":7096,"cCheckManName":"","iStatus":1,"cBillCode_Buy":"CG006740","cBillCode":"QCK006803","cSupplier":"苏州得尔诺印刷器材有限公司","cBuyer":"周守强","cCreateManName":"supervisor","dCreateDate":{"date":28,"day":1,"hours":18,"minutes":29,"month":10,"nanos":0,"seconds":44,"time":1480328984000,"timezoneOffset":-480,"year":116},"cRemark":"","dArrival":{"date":28,"day":1,"hours":18,"minutes":29,"month":10,"nanos":0,"seconds":44,"time":1480328984000,"timezoneOffset":-480,"year":116}},{"ID":7097,"cCheckManName":"","iStatus":1,"cBillCode_Buy":"CG006740","cBillCode":"QCK006804","cSupplier":"苏州得尔诺印刷器材有限公司","cBuyer":"周守强","cCreateManName":"supervisor","dCreateDate":{"date":28,"day":1,"hours":18,"minutes":30,"month":10,"nanos":0,"seconds":44,"time":1480329044000,"timezoneOffset":-480,"year":116},"cRemark":"","dArrival":{"date":28,"day":1,"hours":18,"minutes":30,"month":10,"nanos":0,"seconds":44,"time":1480329044000,"timezoneOffset":-480,"year":116}}];
+
+      function aa(){
+          var html = [{"ID":7096,"cCheckManName":"","iStatus":1,"cBillCode_Buy":"CG006740","cBillCode":"QCK006803","cSupplier":"苏州得尔诺印刷器材有限公司","cBuyer":"周守强","cCreateManName":"supervisor","dCreateDate":{"date":28,"day":1,"hours":18,"minutes":29,"month":10,"nanos":0,"seconds":44,"time":1480328984000,"timezoneOffset":-480,"year":116},"cRemark":"","dArrival":{"date":28,"day":1,"hours":18,"minutes":29,"month":10,"nanos":0,"seconds":44,"time":1480328984000,"timezoneOffset":-480,"year":116}},{"ID":7097,"cCheckManName":"","iStatus":1,"cBillCode_Buy":"CG006740","cBillCode":"QCK006804","cSupplier":"苏州得尔诺印刷器材有限公司","cBuyer":"周守强","cCreateManName":"supervisor","dCreateDate":{"date":28,"day":1,"hours":18,"minutes":30,"month":10,"nanos":0,"seconds":44,"time":1480329044000,"timezoneOffset":-480,"year":116},"cRemark":"","dArrival":{"date":28,"day":1,"hours":18,"minutes":30,"month":10,"nanos":0,"seconds":44,"time":1480329044000,"timezoneOffset":-480,"year":116}}];
+          var aa = eval(html);
+          var i;
+          for(i=0;i<aa.length;i++){
+
+              $("#table").append('<tr><td>'+aa[i].ID+'</td><td>'+aa[i].iStatus+'</td><td>'+aa[i].cBillCode_Buy+'</td><td>'+aa[i].cSupplier+'</td><td>'+aa[i].cBuyer+'</td><td>'+aa[i].cCreateManName+'</td><td>'+getLocalTime(aa[i].dCreateDate.time)+'</td><td>'+aa[i].dArrival+'</td></tr>');
+          }
+      }
+      function getLocalTime(nS) {
+          var tt= new Date(nS).toLocaleString().replace(/\//g, "-");
+          return tt;
+      }
+      $("table tr").click(function()
+      {
+          var $this = $(this);
+          var path = 'http://127.0.0.1:7523/printerp-extend-report/';
+          //alert($this.find('td:eq(0)').text());
+          //alert($this.find('td:eq(1)').text());
+          window.open('http://localhost:63342/workbase/mydemo/echarts.html');
+
+      })
+      </script>
+  </body>
+</html>

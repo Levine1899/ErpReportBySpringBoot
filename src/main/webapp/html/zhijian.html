@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+     <link rel="stylesheet" href="../Css/zhijianstyle.css">
+    <script type="text/javascript" src="../js/jquery2.js"></script>
+  </head>
+   <style type="text/css">
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333333;
+            background-color: #fff;
+        }
+        *{margin:0; padding:0;}
+        .top1 {
+            float: left;
+            width: 100%;
+            height:350px;
+            text-align: center;
+            font-size: 17px;
+            font-height: 20px;
+            font-family: 宋体;
+            color: #FFFFFF;
+
+
+        }
+        .top2 {
+            float: left;
+            top: 41%;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+
+        }
+        .top1-one {
+            float: left;
+            width: 100%;
+            height: 10%;
+
+        }
+        .top1-two{
+            float: left;
+            width: 100%;
+            height: 10%;
+
+        }
+        .top1-three{
+            float: left;
+            width: 100%;
+            height: 10%;
+          
+        }
+        .top-buttom{
+            float: left;
+            width: 100%;
+            height: 20%;
+
+        }
+        .top1-title{
+            float: left;
+            width: 100%;
+            height: 10%;
+            background-color: #F4F4F4;
+            border-top: 1px solid #484860;
+            border-bottom: 1px solid #484860;
+            color: #000;
+            text-align: left;
+            line-height: 35px;
+        }
+        .top1-one-1{
+            position: relative;
+            color: #000;
+            top: 10px;
+            left: 30px;
+            width: 250px;
+            height: 50px;
+            font-size: 17px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .top1-one-2{
+            position: relative;
+            color: #000;
+            top: -28px;
+            left: 230px;
+            width: 350px;
+            height: 20px;
+        }
+        .top1-one-3{
+            position: relative;
+            color: #000;
+            top: -48px;
+            left: 530px;
+            width: 250px;
+            height: 20px;
+        }
+        .top1-two-1{
+            position: relative;
+            color: #000;
+            top: 10px;
+            left: 39px;
+            width: 250px;
+            height: 50px;
+            font-size: 17px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .top1-two-2{
+            position: relative;
+            color: #000;
+            top: -28px;
+            left: 239px;
+            width: 350px;
+            height: 20px;
+        }
+        .top1-two-3{
+            position: relative;
+            color: #000;
+            top: -48px;
+            left: 530px;
+            width: 250px;
+            height: 20px;
+        }
+        .top1-three-1{
+            position: relative;
+            color: #000;
+            top: 10px;
+            left: 39px;
+            width: 250px;
+            height: 50px;
+            font-size: 17px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .top1-three-2{
+            position: relative;
+            color: #000;
+            top: -28px;
+            left: 221px;
+            width: 350px;
+            height: 20px;
+        }
+        .top1-three-3{
+            position: relative;
+            color: #000;
+            top: -48px;
+            left: 530px;
+            width: 250px;
+            height: 20px;
+        }
+        .top-buttom-1{
+            position: relative;
+            color: #000;
+            top: 17px;
+            left: -25px;
+            width: 250px;
+            height: 20px;
+        }
+        .top-buttom-2{
+            position: relative;
+            color: #000;
+            top: 5px;
+            left: 131px;
+            width: 250px;
+            height: 20px;
+        }
+        input{
+            width: 132px;
+            height: 21px;
+            border-radius: 0;
+        }
+        .title2{
+            position: absolute;
+            top: 280px;
+            font-family: 宋体;
+            color: #333;
+            background-color: #F0F0F0;
+            width: 100%;
+            height: 30px;
+            text-align: left;
+            border-top: 1px solid #A9A9A9;
+            border-bottom: 1px solid #A9A9A9;
+            line-height: 30px;
+        }
+        .wlx{
+            position: relative;
+            top: -15%;
+            width:40%;
+            height: 30px;
+            border: 1px solid #A9A9A9;
+            border-right: 1px solid #ffffff;
+            line-height:30px;
+            text-align: center;
+            font-family: 宋体;
+        }
+        .cgx{
+            position: relative;
+            top: -31%;
+            left: 40%;
+            width:15%;
+            height: 30px;
+            border: 1px solid #A9A9A9;
+            border-right: 1px solid #ffffff;
+            line-height:30px;
+            text-align: center;
+            font-family: 宋体;
+        }
+        .jcx{
+            position: relative;
+            top: -47%;
+            left: 55%;
+            width:20%;
+            height: 30px;
+            border: 1px solid #A9A9A9;
+            border-right: 1px solid #ffffff;
+            line-height:30px;
+            text-align: center;
+            font-family: 宋体;
+        }
+        .jcj{
+            position: relative;
+            top: -63%;
+            left: 75%;
+            width:24%;
+            height: 30px;
+            border: 1px solid #A9A9A9;
+
+            line-height:30px;
+            text-align: center;
+            font-family: 宋体;
+        }
+        .table{
+            font-family: verdana,arial,sans-serif;
+            color:#333333;
+            border-width: 0px;
+            border-color: #F0F0F0;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        .table td{
+            border-width: 1px;
+            padding:0px;
+            border-style: solid;
+            border-color:#DDDDDD;
+            text-align: center;
+            float: left;
+            position:relative;
+            line-height: 30px;
+        }
+        #tb{
+            width: 100%;
+            clear:both;
+            position: relative;
+            top: -63%;
+        }
+        #wlxx{
+            position: relative;
+            border: 1px solid #A9A9A9;
+            width: 90%;
+            height: 30%;
+            top: 4%;
+            left: 5%;
+            text-align: left;
+            display:block;
+        }
+        #rkxx{
+            position: relative;
+            border: 1px solid #A9A9A9;
+            width: 90%;
+            height: 30%;
+            top: 4%;
+            left:5%;
+        }
+        #jcxx{
+             position: relative;
+             border: 1px solid #A9A9A9;
+             width: 90%;
+             height: 30%;
+             top: 4%;
+             left: 5%;
+         }
+        .wlxx-title{
+            writing-mode: vertical-lr;
+            width:100%;
+            height: 20px;
+            text-align: left;
+            border-right: 1px solid #A9A9A9;
+            background-color: #DDDDDD;;
+        }
+        .wlxx-neir{
+            position: relative;
+            top: 6%;
+            left: 1%;
+            height: 160px;
+            display:block;
+            padding: 3px;
+        }
+        .rkxx-neir{
+            position: relative;
+            top: 6%;
+            left: 1%;
+            height: 160px;
+            display:block;
+            padding: 3px;
+        }
+        .jcxx-neir{
+            position: relative;
+            top: 6%;
+            left: 1%;
+            height: 160px;
+            display:block;
+            padding: 3px;
+        }
+        .jcxx-neir-1{
+            position: relative;
+            top: 0%;
+            left: -24%;
+            height: 21px;
+            display:block;
+
+        }
+        .jcxx-neir-2{
+            position: relative;
+            top: 5%;
+            left: -24%;
+            height: 21px;
+            display:block;
+
+        }
+        .jcxx-neir-3{
+            position: relative;
+            top: 12%;
+            left: -21%;
+            height: 21px;
+            display:block;
+
+        }
+        .jcxx-neir-4{
+            position: relative;
+            top: 12%;
+            left: 30%;
+            height: 21px;
+            display:block;
+
+        }
+        .rkxx-title{
+            width:100%;
+            height: 20px;
+            text-align: left;
+            border-right: 1px solid #A9A9A9;
+            background-color: #DDDDDD;;
+        }
+        .jcxx-title{
+            writing-mode: vertical-lr;
+            width:100%;
+            height: 20px;
+            text-align: left;
+            border-right: 1px solid #A9A9A9;
+            background-color: #DDDDDD;;
+        }
+    </style>
+<body>
+<div class="top1">
+    <div class="top1-title">单据信息</div>
+    <div class="top1-one">
+       <div class="top1-one-1"><span>送检单号：</span><input type="text" value="QCK104235" disabled></div>
+        <div class="top1-one-2"><span>采购单号:</span><input  type="text"value="CG044564" disabled></div>
+        <div class="top1-one-3"><span>制单日期:</span><input  type="text"value="2016-11-13" disabled></div>
+
+    </div>
+    <div class="top1-two">
+        <div class="top1-two-1"><span>制单人：</span><input type="text" value="王金凤" disabled></div>
+        <div class="top1-two-2"><span>审核人:</span><input  type="text"value="" disabled></div>
+        <div class="top1-two-3"><span>到货日期:</span><input  type="text"value="2016-11-13 10:42:52" disabled></div>
+    </div>
+    <div class="top1-three">
+        <div class="top1-three-1"><span>供货商：</span><input type="text" value="昆山吉川印刷器材有限公司"disabled></div>
+        <div class="top1-three-2"><span>供货商编号:</span><input  type="text"value="G0106"disabled></div>
+        <div class="top1-three-3"><span>单据类型:</span><input  type="text"value="辅料"disabled></div>
+    </div>
+    <div class="top-buttom">
+        <div class="top-buttom-1"><span> 备注:</span></div>
+        <div class="top-buttom-2"><textarea name="a" style="width:628px;height:80px;"disabled>这里写内容</textarea></div>
+        </div>
+    <div class="title2"><span>送检明细</span></div>
+</div>
+<div class="top2">
+    <div class="wlx">物料信息</div>
+    <div class="cgx">采购信息</div>
+    <div class="jcx">检测信息</div>
+    <div class="jcj">检测结果</div>
+    <div id="tb">
+    <table class="table" style="width:100% ">
+        <tr>
+            <td style="width:3% ;height:30px;">序号</td>
+            <td style="width:9% ;height:30px;">编号</td>
+            <td style="width:8.2% ;height:30px;">名称</td>
+            <td style="width:9% ;height:30px;">规格</td>
+            <td style="width:10% ;height:30px;">类别</td>
+            <td style="width:7% ;height:30px;">数量</td>
+            <td style="width:7.6% ;height:30px;">单位</td>
+            <td style="width:7% ;height:30px;">抽检数量</td>
+            <td style="width:6% ;height:30px;">不良数量</td>
+            <td style="width:6.6% ;height:30px;">不良率</td>
+            <td style="width:7% ;height:30px;">异常处理号</td>
+            <td style="width:8% ;height:30px;">是否合格</td>
+            <td style="width:8.6% ;height:30px;">操作</td>
+
+        </tr>
+        <tr>
+            <td style="width:3% ;height:30px;">1</td>
+            <td style="width:9% ;height:30px;">06141313</td>
+            <td style="width:8.2% ;height:30px;">双面胶+</td>
+            <td style="width:9% ;height:30px;">4MM</td>
+            <td style="width:10% ;height:30px;">辅料</td>
+            <td style="width:7% ;height:30px;">5000</td>
+            <td style="width:7.6% ;height:30px;">psc</td>
+            <td style="width:7% ;height:30px;">1000</td>
+            <td style="width:6% ;height:30px;">200</td>
+            <td style="width:6.6% ;height:30px;">5%</td>
+            <td style="width:7% ;height:30px;">1234</td>
+            <td style="width:8% ;height:30px;">合格</td>
+            <td style="width:8.6% ;height:30px;"><a href="javascript:0;" class="cd-popup-trigger2">检测</a></td>
+
+        </tr>
+        <tr>
+            <td style="width:3% ;height:30px;">2</td>
+            <td style="width:9% ;height:30px;">06141313</td>
+            <td style="width:8.2% ;height:30px;">双面胶+</td>
+            <td style="width:9% ;height:30px;">4MM</td>
+            <td style="width:10% ;height:30px;">辅料</td>
+            <td style="width:7% ;height:30px;">5000</td>
+            <td style="width:7.6% ;height:30px;">psc</td>
+            <td style="width:7% ;height:30px;">1000</td>
+            <td style="width:6% ;height:30px;">200</td>
+            <td style="width:6.6% ;height:30px;">5%</td>
+            <td style="width:7% ;height:30px;">1234</td>
+            <td style="width:8% ;height:30px;">不合格</td>
+            <td style="width:8.6% ;height:30px;"><a href="javascript:0;" class="cd-popup-trigger2">检测</a></td>
+
+        </tr>
+    </table>
+        </div>
+    </div>
+<div class="cd-popup2">
+    <div class="cd-popup-container2">
+        <div id="wlxx">
+            <div class="wlxx-title">物料信息</div>
+            <div class="wlxx-neir">
+                <span style="float: left;height:30px;">编号：06141313 &nbsp;&nbsp;&nbsp;&nbsp;名称：3M367双面胶+济川黄色离型纸&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style="float: left;height:30px;">库房：商标原材仓库 &nbsp;&nbsp;版本：1&nbsp;&nbsp;&nbsp;&nbsp;规格：4MM*409MM &nbsp;</span>
+                <span style="float: left;height:30px;width:400px;">类别：辅料 &nbsp;&nbsp;&nbsp;&nbsp;备注：..</span>
+            </div>
+        </div>
+        <div id="rkxx">
+            <div class="rkxx-title">入库信息</div>
+            <div class="rkxx-neir">
+                <span style="float: left;height:30px;width:282px;">数量（标准）：5000 &nbsp;&nbsp;&nbsp;&nbsp;标准单位：PCS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style="float: left;height:30px;width:282px;">数量（采购）：5000 &nbsp;&nbsp;&nbsp;&nbsp;采购单位：PCS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style="float: left;height:30px;width:369px;">可检数量（标准）：5000 &nbsp;&nbsp;&nbsp;&nbsp;可检数量（采购）：5000&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <div id="jcxx">
+            <div class="jcxx-title">检测信息</div>
+            <div class="jcxx-neir">
+                <div class="jcxx-neir-1"><span>抽检数量（标准）：</span><input type="text" value="QCK104235"></div>
+                <div class="jcxx-neir-2"><span>不良数量（标准）：</span><input type="text" value="QCK104235"></div>
+                <div class="jcxx-neir-3"><span>不良率（%）：</span><input type="text" value="QCK104235"></div>
+                <div class="jcxx-neir-4"><input type="button" value="保存" onclick="baocun()" style="width: 50px;"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+
+            //打开窗口
+            $('.cd-popup-trigger2').on('click', function(event){
+                event.preventDefault();
+                $('.cd-popup2').addClass('is-visible2');
+                //var i=this.parentNode.parentNode;
+
+                //alert(i.cells[2].innerHTML);
+                //$(".dialog-addquxiao").hide()
+            });
+            //关闭窗口
+            $('.cd-popup2').on('click', function(event){
+                if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup2') ) {
+                    event.preventDefault();
+                    $(this).removeClass('is-visible2');
+                }
+            });
+            //ESC关闭
+            $(document).keyup(function(event){
+                if(event.which=='27'){
+                    $('.cd-popup2').removeClass('is-visible2');
+                }
+            });
+            })
+        function baocun(){
+            alert("保存");
+            $('.cd-popup2').removeClass('is-visible2');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,135 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+ html,body{ margin:0px; height:100%;}
+        #header{
+            border:1px solid #113965;
+            float: left;
+            width:100%;
+            height:78px;
+            font-family: ºÚÌå;
+            color: #000;
+            font-size: 15px;
+        }
+        #content {
+            position: relative;
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:65%;
+
+        }
+        #footer{
+
+            border:1px;
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:21%;
+
+        }
+        #div1{
+            border:1px solid  #113965;
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:31px;
+            background:#F0F0F0;
+        }
+        #div2{
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:52%;
+            background:#F0F0F0;
+            position: relative;
+        }
+        #select{
+            float: left;
+            width:400px;
+            height: 30px;
+        }
+        #xz{
+            float: left;
+            width:50px;
+            height:23px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #113965;
+            text-align: center;
+            font-family: ºÚÌå;
+            color: #000;
+            font-size: 15px;
+        }
+        #bz{
+            float: left;
+            width:524px;
+            height: 22px;
+            background: #f0f0f0;
+            border: 1px solid #113965;
+            border-top: 1px solid #ffffff;
+            text-align: center;
+            font-family: ºÚÌå;
+            color: #000;
+            font-size: 15px;
+        }
+        #nr{
+            float: left;
+            width: 550px;
+            clear:both;
+        }
+        .td{
+
+            border-width: 1px;
+            padding: 3px;
+            border-style: solid;
+            border-color: #F0F0F0;
+            background-color: #ffffff;
+        }
+        .table{
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #F0F0F0;
+            border-collapse: collapse;}
+        #foot1{
+            border-bottom:1px solid  #113965;
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:4em;
+            line-height: 4em;;
+            overflow: hidden;
+            background:#F0F0F0;
+        }
+        #foot2{
+
+            float: left;
+            padding: 1px;
+            width:100%;
+            height:5em;
+            line-height: 5em;;
+            overflow: hidden;
+            background:#F0F0F0;
+            color: #000;
+        }
+        .foot-right{
+            float: right;
+        }
+ 

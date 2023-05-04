@@ -1,0 +1,236 @@
+/* 
+* @Author: Marte
+* @Date:   2019-12-03 16:31:35
+* @Last Modified by:   Marte
+* @Last Modified time: 2019-12-19 16:50:15
+*/
+*{
+    padding:0;
+    margin:0;
+
+}
+ul, ol{
+    list-style:none;
+}
+.body{
+    width:calc(1920rem / 192);
+    /*height: 1080px;*/
+    font-family: "微软雅黑";
+    color:#fff;
+    font-size: calc(20rem / 192);
+    position:relative;
+    overflow: hidden;
+
+}
+html{
+    background: #181f27;
+
+}
+a{
+    color:#FFF;
+    text-decoration: none;
+
+}
+
+.logo img{
+    margin-top:calc(25rem / 192);
+    margin-left: calc(20rem / 192);
+}
+
+
+
+.logo span{
+    text-align: right;
+
+    margin-right:calc(30rem / 192);
+    float: right;
+    width: calc(500rem / 192);
+    height:calc(70rem / 192);
+    font-size:calc(42rem / 192);
+    line-height:calc(100rem / 192);
+    /*margin-top: -10px;*/
+}
+.logo span i{
+    font-style: normal;
+}
+.valueLogo{
+    position:fixed;
+    right:calc(20rem / 192);
+    bottom:calc(10rem / 192);
+    width:calc(180rem / 192);
+    height:calc(38rem / 192);
+}
+.header{
+    width:100%;
+    height: calc(50rem/ 136);
+    background-color:#253448;
+    /*background-image:url(img/write.png) no-repeat center center;*/
+
+    /*border-bottom: 1px solid #fff;*/
+    /*display:none; */
+}
+
+
+.header-right{
+    float:right;
+    color:#fff;
+    font-family: "楷体";
+    margin-right:calc(20rem / 192);
+    font-weight: bold;
+}
+.header-right>li{
+    float:left;
+    font-size:0.23041rem;
+    line-height: 0.36rem;
+}
+.header-right li ol{
+    border-left: 1px solid #fff;
+    margin-left: 0.10416rem;
+}
+.header-right li ol li{
+    /*font-size:26px;*/
+    line-height: 0.12625rem;
+    padding: 0 0 0 0.10416rem;
+}
+.header-right li ol li:nth-of-type(1){
+    font-size: 0.12rem;
+    margin-top: 0.06rem;
+}
+.header-right li ol li:nth-of-type(2){
+    font-size: 0.07375rem;
+}
+.header-left{
+    width: calc(568rem / 192);
+    height: calc(70rem / 192);
+    display:inline-block;
+    background: url(../img/write.png) no-repeat left center;
+    /*margin-left:-2%;*/
+    background-size: 2.95rem auto;
+}
+.logo{
+    /*vertical-align: middle;*/
+    margin-left:4%;
+    margin-top: calc(10rem / 192);
+
+    height: 70%;
+}
+
+.art{
+    /*background: #181f27;*/
+    position:relative;
+    height:calc(1010rem / 192);
+    padding-left:calc(60rem / 192);
+    padding-right:calc(60rem / 192);
+}
+.machine{
+    width: calc(332rem / 192);
+    height: calc(204rem / 192);
+    background-color: #253448;
+    border-width:calc(1rem / 192);
+    border-color: rgb(238, 238, 238);
+    border-style: solid;
+    border-radius: calc(5rem / 192);
+    /*background-color: rgb(37, 52, 72);*/
+    box-shadow: 0px 3px 10px 0px rgba(255, 255, 255, 0.69);
+    margin-top: calc(30rem / 192);
+    float: left;
+    margin-right: calc(32rem / 192);
+    color:#fff;
+    text-align: center;
+}
+.machine:nth-of-type(5n) { margin-right: 0px;}
+.MachineName{
+    width: 100%;
+    height:calc(50rem / 192);
+    background-color: #294569;
+    color:#fff;
+    font-size:calc(28rem / 192);
+    line-height:calc(50rem / 192);
+    text-align: center;
+    border-bottom:1px solid #777;
+}
+.machine span{
+    display:inline-block;
+    border:1px solid #999;
+    color:#fff;
+    font-size:calc(22rem / 192);
+    text-align: center;
+    line-height: calc(38rem / 192);
+    height:calc(38rem / 192);
+    width: calc(83rem / 192);
+    border-radius:calc(3rem / 192);
+    /*margin-top: calc(8rem / 192);*/
+    margin-right: 4px;
+    float: left;
+}
+.machine .shou{
+    width:calc(38rem / 192);
+    margin-left: calc(8rem / 192);
+    border-radius:50%;
+    background-color: #13bc1f;
+
+}
+.machine .time1{
+    background-color: #13bc1f;
+}
+.machine .time2{
+    background-color: #f5b405;
+}
+.machine .time3{
+    background-color: #999;
+    margin-right: 0px;
+}
+.ProductName{
+    width: calc(310rem / 192);
+    height: calc(50rem / 192);
+    background-color: #13bc1f;
+    margin:0 auto;
+    margin-top: calc(8rem / 192);
+    border-radius:calc(26rem / 192);
+    border:1px solid #999;
+    line-height: calc(25rem / 192);
+    font-size:calc(18rem / 192);
+    font-weight:normal;
+}
+.circle{
+    width: 100%;
+    height: calc(36rem / 192);
+    border-top:calc(1rem / 192); solid: #777;
+    background-color: #294569;
+    margin-top:calc(8rem / 192);
+
+}
+.circle  li{
+    width: calc(16rem / 192);
+    height:calc(16rem / 192);
+    border: 1px solid #999;
+    border-radius:50%;
+    float: left;
+    margin-top: calc(8rem / 192);
+    margin-left:calc(12rem / 192);
+}
+.circle  li:nth-of-type(1){
+    background-color: #13bc1f;
+}
+
+.circle  li:nth-of-type(2){
+    background-color: #13bc1f;
+}
+.circle  li:nth-of-type(3){
+    background-color: #13bc1f;
+}
+.circle  li:nth-of-type(4){
+    background-color: #ea5420;
+}
+.circle  li:nth-of-type(5){
+    background-color: #e6c302;
+}
+.circle  li:nth-of-type(6){
+    background-color: #999;
+}
+.bianqian{
+    /*background-color: pink;*/
+    margin-top: calc(8rem / 192);
+    width: calc(331rem / 192);
+    height: calc(40rem / 192);
+}

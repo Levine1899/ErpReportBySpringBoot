@@ -1,0 +1,174 @@
+
+ *{
+                padding:0;
+                margin:0;
+               
+            }
+            ul, ol{
+                list-style:none;
+            }
+            .body{
+                width:calc(1920rem / 192);
+                /*height: 1080px;*/
+                font-family: "微软雅黑";
+                color:#fff;
+                font-size: calc(20rem / 192);
+                position:relative;
+                overflow: hidden;
+
+            }
+            html{
+                            background: #181f27;
+
+            }
+            a{
+                color:#FFF;
+                text-decoration: none;
+
+            }
+
+            .logo img{
+                margin-top:calc(25rem / 192);
+                margin-left: calc(20rem / 192);
+            }
+
+              
+
+            .logo span{
+                text-align: right;
+                
+                margin-right:calc(30rem / 192);
+                float: right;
+                width: calc(500rem / 192);
+                height:calc(70rem / 192);
+                font-size:calc(42rem / 192);
+                line-height:calc(100rem / 192);
+                /*margin-top: -10px;*/
+            }
+            .logo span i{
+                font-style: normal;
+            }
+           .valueLogo{
+                position:fixed;
+               right:calc(20rem / 192);
+                bottom:calc(10rem / 192);
+                width:calc(180rem / 192);
+                height:calc(38rem / 192);
+            }
+            .header{
+                width:100%;
+                height: calc(70rem/ 192);
+                background-color:#253448;
+                /*background-image:url(img/write.png) no-repeat center center;*/
+                
+                /*border-bottom: 1px solid #fff;*/
+                /*display:none; */
+            }
+
+
+            .header-right{
+                float:right;
+                color:#fff;
+                font-family: "楷体";
+                margin-right:calc(20rem / 192);
+                font-weight: bold;
+            }
+            .header-right>li{
+                float:left;
+                font-size:0.23041rem;
+                line-height: 0.36rem;
+            }
+            .header-right li ol{
+                border-left: 1px solid #fff;
+                margin-left: 0.10416rem;
+            }
+            .header-right li ol li{
+                /*font-size:26px;*/
+                line-height: 0.12625rem;
+                padding: 0 0 0 0.10416rem;
+            }
+            .header-right li ol li:nth-of-type(1){
+                font-size: 0.12rem;
+                margin-top: 0.06rem;
+            }
+            .header-right li ol li:nth-of-type(2){
+                font-size: 0.07375rem;
+            }
+            .header-left{
+                width: calc(568rem / 192);
+                height: calc(70rem / 192);
+                display:inline-block;
+                background: url(../../img/write.png) no-repeat left center;
+                /*margin-left:-2%;*/
+                background-size: 2.95rem auto;
+            }
+            .logo{
+                /*vertical-align: middle;*/
+                margin-left:4%;
+                margin-top: calc(10rem / 192);
+
+                height: 70%;
+            }
+
+
+            .footer {
+            width:100%;
+            height:calc(60rem / 192);
+            background-color: #273548;
+            position:fixed;
+            left:0px;
+            bottom:0px;
+
+        }
+          .footer .footer_list{
+            width:calc(1400rem / 192);
+            height:calc(60rem / 192);
+            /*background-color: pink;*/
+            margin:0 auto;
+            
+
+         }
+          .footer .footer_list li{
+            width: calc(200rem / 192);
+            height:calc(60rem / 192);
+            float: left;
+         }
+         .footer .footer_list li a.current{
+            background-color: #4e6a90;
+            /*border-top:1px solid  #eaeaea ;*/
+            border-bottom:2px solid #9cd4ff;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+
+         }
+          .footer .footer_list li a{
+            display:block;
+            width: calc(200rem / 192);
+            height:calc(60rem / 192);
+            text-align: center;
+            font: calc(20rem / 192)/calc(60rem / 192)   "微软雅黑" ;
+          }
+
+        .art{
+                /*background: #181f27;*/
+                position:relative;
+                height:calc(950rem / 192);
+                padding-left:calc(40rem / 192);
+                padding-right:calc(40rem / 192);
+        }
+        .fenqu{
+            width:calc(202rem / 192);
+            height:calc(58rem / 192);
+            border:1px solid #ea5420;
+            color:#fff;
+            position:fixed;
+
+            bottom:calc(1rem / 192);
+            background-color: #000;
+            font-size:calc(20rem / 192);
+            text-align: center;
+            padding-left:calc(74rem / 192);
+
+            left:calc(30rem / 192);
+        }

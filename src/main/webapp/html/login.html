@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us" id="extr-page">
+<head>
+    <meta charset="utf-8">
+    <title> 悟略科技</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/smartadmin-rtl.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Css/demo.min.css">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/splash/touch-icon-ipad-retina.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="../img/splash/ipad-landscape.png"
+          media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="../img/splash/ipad-portrait.png"
+          media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="../img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+    <script type="text/javascript" src="../jedate/jedate.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/md5.js"></script>
+    <script type="text/javascript" src="../js/md5.min.js"></script>
+</head>
+<style>
+    #begin_time {
+        background: url(../img/Month-Calendar.png) no-repeat 143px 6px;
+    }
+</style>
+<body class="animated fadeInDown">
+<header id="header">
+    <div id="logo-group">
+        <span id="logo"> <img src="../images/loginImg/lefttitle.png" alt="SmartAdmin"> </span>
+    </div>
+</header>
+<div id="main" role="main" style="background-image: url(../images/loginImg/leftlogo.jpg)">
+    <div id="content" class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+                <h1 class="txt-color-red login-header-big" style="font-size: 60px; top:50%;color:#F35823">悟略科技</h1>
+                <div class="hero1">
+                    <div class="pull-left login-desc-box-l">
+                        <h4 class="paragraph-header" style="font-size: 20px; font-color:#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;悟印之略
+                            赋印智能</h4>
+                        <div class="login-app-icons">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                <div class="well no-padding" style="background-color: #F4F4F4">
+                    <form action="/login" id="login-form" class="smart-form client-form" method="post"
+                          onsubmit="return checkForm()">
+                        <header>
+                            Login in
+                        </header>
+                        <fieldset>
+                            <section>
+                                <label class="label">用户名</label>
+                                <label class="input"> <i class="icon-append fa fa-user"></i>
+                                    <input type="text" id="username" name="username">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                                        请输入你的用户名</b></label>
+                            </section>
+                            <section style="height:61px;">
+                                <label class="label">班次</label>
+                                <label class="input">
+                                    <select id="banciId" style="width:100px;height:30px;display:block" name="banci">
+                                    </select>
+                                    <select id="begin_time"
+                                            style="position:relative;left:150px;top:-30px;display:block;width:174px;height:30px;cursor:pointer;background-color:#ffffff;"
+                                            name="workTime">
+                                    </select>
+                                </label>
+                            </section>
+                            <section>
+                                <label class="label">密码</label>
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                    <input type='password' id='input_pwd' value=''/>
+                                    <input type="hidden" name="password" id="md5_pwd" value="">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> 请输入密码</b>
+                                </label>
+                                <div class="note">
+                                    <h style="color: red;position: relative;left: 140px;top:7px;" id="message"></h>
+                                </div>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button id="duID" type="submit" class="btn btn-primary">
+                                登录
+                            </button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    function checkForm() {
+        $("#duID").text("正在登录...");
+        document.getElementById("duID").setAttribute("disabled", true);//设置不可点击
+        document.getElementById("duID").style.backgroundColor = '#555555';//设置背景色
+        var name = $(" #username ").val();
+        var input_pwd = document.getElementById('input_pwd');
+        var md5_pwd = document.getElementById('md5_pwd');
+        md5_pwd.value = md5(input_pwd.value);
+        MfsJSBridge.invoke('login', name, 'windowCallback');
+    }
+
+    function setMessage() {
+        if (GetQueryString("message") == 0 || GetQueryString("message") == 1) {
+            $("#message").append("用户名或密码错误！");
+        } else if (GetQueryString("message") == 2) {
+            $("#message").append("请选择上班时间");
+        } else if (GetQueryString("message") == 5) {
+            $("#message").append("账户已锁定,请联系管理员！");
+        } else {
+            $("#message").append("");
+        }
+    }
+
+    Date.prototype.Format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt))
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+    setMessage();
+    setOption();
+
+    function setOption() {
+        $.ajax({
+            url: encodeURI(encodeURI("../getBanci")),
+            dataType: "json",
+            type: "post",
+            async: false,
+            success: function (data) {
+                console.log(data);
+                var i = 0;
+                for (i; i < data.length; i++) {
+                    $("#banciId").append("<option>" + data[i].cName + "</option>");
+                }
+                var selectTime = data[0].dStartTime;
+                var datem = new Date();
+                var dayString = datem.Format("yyyy-MM-dd");
+                var hourString = selectTime.substring(10, 21);
+                var dateB = new Date(new Date() - 24 * 60 * 60 * 1000);
+                var dayStringBefort = dateB.Format("yyyy-MM-dd");
+                $("#begin_time").append("<option>" + dayString + hourString + "</option><option>" + dayStringBefort + hourString + "</option>");
+                $('#banciId').change(function () {
+                    var selectindex = $('#banciId').get(0).selectedIndex;
+                    var selectTime = data[selectindex].dStartTime;
+                    var hourString = selectTime.substring(10, 21);
+                    var dateB = new Date(new Date() - 24 * 60 * 60 * 1000);
+                    var dayStringBefort = dateB.Format("yyyy-MM-dd");
+                    $("#begin_time").empty();
+                    $("#begin_time").append("<option>" + dayString + hourString + "</option><option>" + dayStringBefort + hourString + "</option>");
+                })
+            }
+        })
+    }
+</script>
+</body>
+</html>

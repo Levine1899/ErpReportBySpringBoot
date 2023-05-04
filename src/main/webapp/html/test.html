@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+   
+  </head>
+  <style type="text/css">
+    body {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+    }
+    *{margin:0; padding:0;}
+    #top{
+        position: relative;
+        float: right;
+        top: 10px;
+        padding: 1px;
+        width:90%;
+        height:20%;
+    }
+    #content {
+        position: relative;
+        float: right;
+        top: 30px;
+        padding: 1px;
+        width:90%;
+        height:65%;
+    }
+    #xh{
+        padding:3px 3px;
+        float:left;
+        width:26%;
+        height: 30px;
+        border: 1px solid #A9A9A9;
+
+        border-right: 1px solid #ffffff;
+        line-height:30px;
+        text-align: center;
+        text-align: center;
+        font-family: 宋体;
+        color: #000;
+        font-size: 17px;
+
+    }
+    #lx{
+        float:left;
+        width:13%;
+        height: 30px;
+        padding:3px 3px;
+        border: 1px solid #A9A9A9;
+
+        border-right: 1px solid #ffffff;
+        line-height:30px;
+        text-align: center;
+        font-family: 宋体;
+        color: #000;
+        font-size: 17px;
+    }
+    #jcz{
+        float:left;
+        width:15%;
+        height: 30px;
+        padding:3px 3px;
+        border: 1px solid #A9A9A9;
+
+        border-right: 1px solid #ffffff;
+
+        line-height:30px;
+        text-align: center;
+        font-family: 宋体;
+        color: #000;
+        font-size: 17px;
+    }
+    #dc{
+        float:left;
+        width:15%;
+        height: 30px;
+        padding:3px 3px;
+        border: 1px solid #A9A9A9;
+        line-height:30px;
+        text-align: center;
+        border-right: 1px solid #ffffff;
+
+        font-family: 宋体;
+        color: #000;
+        font-size: 17px;
+    }
+    #gxsj{
+        float:left;
+        width:18%;
+        height: 30px;
+        padding:3px 3px;
+        border: 1px solid #A9A9A9;
+        font-family: 宋体;
+        color: #000;
+        font-size: 17px;
+        line-height:30px;
+        text-align: center;
+    }
+    #tb{
+        width: 90.3%;
+        clear:both;
+    }
+    .table{
+        font-family: verdana,arial,sans-serif;
+
+        color:#333333;
+        border-width: 0px;
+        border-color: #F0F0F0;
+        border-collapse: collapse;
+
+
+    }
+
+    .table td{
+        border-width: 1px;
+        padding: 3px;
+        border-style: solid;
+        border-color:#DDDDDD;
+ 		text-align:center;
+    }
+    #pro{
+        float: left;
+        border: 1px solid #A9A9A9;
+        width:100px;
+        height:30px;
+        text-align:center;
+        border-right:#f6f6f6 0px solid;
+        line-height:30px;
+    }
+    #protext{
+        float: left;
+        width:100px;
+        border-top:#f6f6f6 0px solid;
+    }
+    input{
+        font-family: 宋体;
+        font-size:18px;
+       border-radius: 0;
+       text-align:center;
+    }
+</style>
+</head>
+<body>
+<div id="top">
+    <div id="pro">什么问题</div>
+    <div id="protext"><input type="text" style="height: 28px;width:100px;"></div>
+</div>
+<div id ="content">
+    <div id="xh">姓名</div>
+    <div id="lx">年龄</div>
+    <div id="jcz">民族</div>
+    <div id="dc">出生年月</div>
+    <div id="gxsj">操作</div>
+    <div id="tb">
+        <table class="table" style="width:100% ">
+            <tr>
+                <td class="td" style="width:29.4% ;height:40px;text-align:center;color:red;"><input type="text" value="1" style="width: 321px;height: 36px; border: none;"></td>
+                <td class="td" style="width:15.23%;height:40px;color:red;"><input type="text" value="1" style="width: 160px;height: 36px; border: none;"></td>
+                <td class="td" style="width:17.29%  ;height:40px;color:red;"><input type="text" value="1" style="width: 185px;height: 36px; border: none;"></td>
+                <td class="td" style="width:17.49%  ;height:40px;color:red;"><input type="text" value="1" style="width: 185px;height: 36px; border: none;"></td>
+                <td class="td" style="width:20.64%  ;height:40px;color:red;background-color:#F9F9F9;"><button onclick="addTd()">新增</button> <button onclick="removeTr(this)">删除</button></td>
+                </tr>
+                </table>
+    </div>
+</div>
+	<script type="text/javascript"src="../js/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript">
+      function addTd(){
+    	  $("table.table").append('<tr><td class="td" style="width:29.4% ;height:40px;text-align:center;color:red;background-color:#F9F9F9;"><input type="text" value="1" style="width: 321px;height: 36px; border: none;"></td> <td class="td" style="width:15.23%;height:40px;color:red;background-color:#F9F9F9;"><input type="text" value="1" style="width: 160px;height: 36px; border: none;"></td> <td class="td" style="width:17.29%  ;height:40px;color:red;background-color:#F9F9F9;"><input type="text" value="1" style="width: 185px;height: 36px; border: none;"></td>'+
+    	      '<td class="td" style="width:17.49%  ;height:40px;color:red;background-color:#F9F9F9;"><input type="text" value="1" style="width: 185px;height: 36px; border: none;"></td>'+
+    	      '<td class="td" style="width:20.64%  ;height:40px;color:red;background-color:#F9F9F9;"><button onclick="addTd()">新增</button> <button onclick="removeTr(this)">删除</button></td>'+
+    	      '</tr>"')
+    	  }
+    	  function removeTr(r){
+    	      var i=r.parentNode.parentNode.rowIndex;
+    	      r.parentNode.parentNode.remove();
+
+    	  }
+      </script>
+  </body>
+</html>
