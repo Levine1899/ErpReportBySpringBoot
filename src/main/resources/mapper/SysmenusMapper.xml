@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.value.erpreportbyspringboot.mapper.SysmenusMapper">
+
+    <resultMap id="BaseResultMap" type="cn.value.erpreportbyspringboot.domain.Sysmenus">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="ipid" column="ipid" jdbcType="INTEGER"/>
+        <result property="ilevel" column="ilevel" jdbcType="INTEGER"/>
+        <result property="iindex" column="iindex" jdbcType="INTEGER"/>
+        <result property="cname" column="cname" jdbcType="VARCHAR"/>
+        <result property="ccaption" column="ccaption" jdbcType="VARCHAR"/>
+        <result property="chint" column="chint" jdbcType="VARCHAR"/>
+        <result property="cpackage" column="cpackage" jdbcType="VARCHAR"/>
+        <result property="cformclass" column="cformclass" jdbcType="VARCHAR"/>
+        <result property="cformname" column="cformname" jdbcType="VARCHAR"/>
+        <result property="isystem" column="isystem" jdbcType="INTEGER"/>
+        <result property="itag" column="itag" jdbcType="INTEGER"/>
+        <result property="ishowmodal" column="ishowmodal" jdbcType="INTEGER"/>
+        <result property="cbtnname" column="cbtnname" jdbcType="VARCHAR"/>
+        <result property="cbtncaption" column="cbtncaption" jdbcType="VARCHAR"/>
+        <result property="cowner" column="cowner" jdbcType="VARCHAR"/>
+        <result property="isingle" column="isingle" jdbcType="INTEGER"/>
+        <result property="csingleflag" column="csingleflag" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id, ipid, ilevel,
+                iindex, cname, ccaption,
+                chint, cpackage, cformclass,
+                cformname, isystem, itag,
+                ishowmodal, cbtnname, cbtncaption,
+                cowner, isingle, csingleflag
+    </sql>
+    <select id="selectByNameAndId" resultMap="BaseResultMap">
+        SELECT tblmu.*
+        FROM sysMenus tblmu
+        WHERE id IN (SELECT tblmu.ipid
+                     FROM sysRoleMobiles tblmb
+                              LEFT JOIN sysMenus tblmu ON tblmb.imenuid = tblmu.id
+                     WHERE tblmu.isystem = 1
+                       AND tblmu.ipid &lt;> 0
+                       AND tblmb.uroleid IN (SELECT DISTINCT tblru.uroleid
+                                             FROM sysRoleUsers tblru
+                                                      LEFT JOIN dzZG tblzg ON tblzg.id = tblru.iuserid
+                                             WHERE tblzg.id = #{id}
+                                                OR tblzg.cusername = #{name}))
+        UNION ALL
+        SELECT tblmu.*
+        FROM sysRoleMobiles tblmb
+                 LEFT JOIN sysMenus tblmu ON tblmb.imenuid = tblmu.id
+        WHERE tblmu.isystem = 1
+          AND tblmu.ipid NOT IN (0)
+          AND tblmb.uroleid IN (SELECT DISTINCT tblru.uroleid
+                                FROM sysRoleUsers tblru
+                                         LEFT JOIN dzZG tblzg ON tblzg.id = tblru.iuserid
+                                WHERE tblzg.id = #{id}
+                                   OR tblzg.cusername = #{name})
+    </select>
+    <select id="selectNoIpaidByNameAndId" resultMap="BaseResultMap">
+        SELECT DISTINCT tblmu.*
+        FROM sysRoleMobiles tblmb
+                 JOIN sysMenus tblmu ON tblmb.imenuid = tblmu.id AND tblmu.isystem = 1 AND tblmu.ipid &lt;> 0
+        WHERE EXISTS (SELECT 1
+                      FROM sysRoleUsers tblru
+                               LEFT JOIN dzZG tblzg ON tblzg.id = tblru.iuserid
+                      WHERE tblmb.uroleid = tblru.uroleid
+                        AND (tblzg.id = #{id} OR tblzg.cusername = #{name}))
+    </select>
+
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.value.erpreportbyspringboot.mapper.SysetupMapper">
+
+    <resultMap id="BaseResultMap" type="cn.value.erpreportbyspringboot.domain.Sysetup">
+            <id property="csetname" column="csetname" jdbcType="VARCHAR"/>
+            <result property="cowner" column="cowner" jdbcType="VARCHAR"/>
+            <result property="csettype" column="csettype" jdbcType="VARCHAR"/>
+            <result property="csetvalue" column="csetvalue" jdbcType="VARCHAR"/>
+            <result property="csm" column="csm" jdbcType="VARCHAR"/>
+            <result property="iplant" column="iplant" jdbcType="INTEGER"/>
+            <result property="dsynstamp" column="dSynStamp" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        csetname,cowner,csettype,
+        csetvalue,csm,iplant,
+        dSynStamp,iSynStamp
+    </sql>
+    <select id="getCsetvalueByCsetname" resultType="java.lang.Integer">
+        select csetvalue
+        from sysetup
+        where csetname = #{csetname}
+    </select>
+</mapper>

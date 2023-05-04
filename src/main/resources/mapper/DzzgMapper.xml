@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.value.erpreportbyspringboot.mapper.DzzgMapper">
+
+    <resultMap id="BaseResultMap" type="cn.value.erpreportbyspringboot.domain.Dzzg">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="ibmid" column="ibmid" jdbcType="INTEGER"/>
+            <result property="cbmbh" column="cbmbh" jdbcType="VARCHAR"/>
+            <result property="czgbh" column="czgbh" jdbcType="VARCHAR"/>
+            <result property="czgxm" column="czgxm" jdbcType="VARCHAR"/>
+            <result property="cbmmc" column="cbmmc" jdbcType="VARCHAR"/>
+            <result property="cxb" column="cxb" jdbcType="VARCHAR"/>
+            <result property="ccsrq" column="ccsrq" jdbcType="TIMESTAMP"/>
+            <result property="cmz" column="cmz" jdbcType="VARCHAR"/>
+            <result property="csfz" column="csfz" jdbcType="VARCHAR"/>
+            <result property="ccjgzrq" column="ccjgzrq" jdbcType="TIMESTAMP"/>
+            <result property="cjcgzrq" column="cjcgzrq" jdbcType="TIMESTAMP"/>
+            <result property="crdrq" column="crdrq" jdbcType="TIMESTAMP"/>
+            <result property="cqdhtrq" column="cqdhtrq" jdbcType="TIMESTAMP"/>
+            <result property="chtsxrq" column="chtsxrq" jdbcType="TIMESTAMP"/>
+            <result property="czw" column="czw" jdbcType="VARCHAR"/>
+            <result property="czglx" column="czglx" jdbcType="VARCHAR"/>
+            <result property="cwhcd" column="cwhcd" jdbcType="VARCHAR"/>
+            <result property="cbyrq" column="cbyrq" jdbcType="TIMESTAMP"/>
+            <result property="cbyxx" column="cbyxx" jdbcType="VARCHAR"/>
+            <result property="cbyzy" column="cbyzy" jdbcType="VARCHAR"/>
+            <result property="cjg" column="cjg" jdbcType="VARCHAR"/>
+            <result property="cxxdz" column="cxxdz" jdbcType="VARCHAR"/>
+            <result property="clxdh" column="clxdh" jdbcType="VARCHAR"/>
+            <result property="mjkzk" column="mjkzk" jdbcType="VARCHAR"/>
+            <result property="mjlcf" column="mjlcf" jdbcType="VARCHAR"/>
+            <result property="mtczy" column="mtczy" jdbcType="VARCHAR"/>
+            <result property="mbrjl" column="mbrjl" jdbcType="VARCHAR"/>
+            <result property="gzp" column="gzp" jdbcType="OTHER"/>
+            <result property="cylbh" column="cylbh" jdbcType="VARCHAR"/>
+            <result property="cbxbh" column="cbxbh" jdbcType="VARCHAR"/>
+            <result property="nlggz" column="nlggz" jdbcType="FLOAT"/>
+            <result property="nbzgz" column="nbzgz" jdbcType="FLOAT"/>
+            <result property="nfdgz" column="nfdgz" jdbcType="FLOAT"/>
+            <result property="ngwgz" column="ngwgz" jdbcType="FLOAT"/>
+            <result property="nwjbt" column="nwjbt" jdbcType="FLOAT"/>
+            <result property="nflbt" column="nflbt" jdbcType="FLOAT"/>
+            <result property="nyybt" column="nyybt" jdbcType="FLOAT"/>
+            <result property="nzfbt" column="nzfbt" jdbcType="FLOAT"/>
+            <result property="ngjj" column="ngjj" jdbcType="FLOAT"/>
+            <result property="nylj" column="nylj" jdbcType="FLOAT"/>
+            <result property="nsyj" column="nsyj" jdbcType="FLOAT"/>
+            <result property="nylf" column="nylf" jdbcType="FLOAT"/>
+            <result property="mddqk" column="mddqk" jdbcType="VARCHAR"/>
+            <result property="irelawithsys" column="irelawithsys" jdbcType="INTEGER"/>
+            <result property="iquality" column="iQuality" jdbcType="SMALLINT"/>
+            <result property="czjmpy" column="czjmpy" jdbcType="VARCHAR"/>
+            <result property="czjmwb" column="czjmwb" jdbcType="VARCHAR"/>
+            <result property="tbzgid" column="tbzgid" jdbcType="INTEGER"/>
+            <result property="nnumber" column="nNumber" jdbcType="DECIMAL"/>
+            <result property="icol" column="iCol" jdbcType="INTEGER"/>
+            <result property="ckqpassword" column="cKqPassword" jdbcType="VARCHAR"/>
+            <result property="kqgroupnameid" column="KqGroupNameID" jdbcType="INTEGER"/>
+            <result property="czubie" column="czubie" jdbcType="VARCHAR"/>
+            <result property="ifzr" column="iFzr" jdbcType="SMALLINT"/>
+            <result property="czjzl" column="cZjZl" jdbcType="VARCHAR"/>
+            <result property="cworksect" column="cWorkSect" jdbcType="VARCHAR"/>
+            <result property="ckqbm" column="ckqbm" jdbcType="VARCHAR"/>
+            <result property="ckqbh" column="ckqbh" jdbcType="VARCHAR"/>
+            <result property="iflr" column="Iflr" jdbcType="INTEGER"/>
+            <result property="iysr" column="Iysr" jdbcType="INTEGER"/>
+            <result property="cbianzhi" column="cbianzhi" jdbcType="VARCHAR"/>
+            <result property="ciccard" column="ciccard" jdbcType="VARCHAR"/>
+            <result property="irepairflag" column="iRepairFlag" jdbcType="INTEGER"/>
+            <result property="ipunchcard" column="iPunchCard" jdbcType="INTEGER"/>
+            <result property="cusername" column="cusername" jdbcType="VARCHAR"/>
+            <result property="cshowname" column="cshowname" jdbcType="VARCHAR"/>
+            <result property="calias" column="calias" jdbcType="VARCHAR"/>
+            <result property="cbusphone" column="cbusphone" jdbcType="VARCHAR"/>
+            <result property="cmobphone" column="cmobphone" jdbcType="VARCHAR"/>
+            <result property="cnote" column="cnote" jdbcType="VARCHAR"/>
+            <result property="idisabled" column="idisabled" jdbcType="INTEGER"/>
+            <result property="ilogon" column="ilogon" jdbcType="INTEGER"/>
+            <result property="ichgpwd" column="ichgpwd" jdbcType="INTEGER"/>
+            <result property="cpassword" column="cPassword" jdbcType="VARCHAR"/>
+            <result property="iissales" column="iIsSales" jdbcType="INTEGER"/>
+            <result property="cworkqj" column="cworkqj" jdbcType="VARCHAR"/>
+            <result property="cpasswordhash" column="cpasswordhash" jdbcType="VARCHAR"/>
+            <result property="cweixin" column="cweixin" jdbcType="VARCHAR"/>
+            <result property="cqq" column="cqq" jdbcType="VARCHAR"/>
+            <result property="cemail" column="cemail" jdbcType="VARCHAR"/>
+            <result property="izwid" column="iZwid" jdbcType="INTEGER"/>
+            <result property="iorgwidth" column="iorgwidth" jdbcType="INTEGER"/>
+            <result property="iorgheight" column="iorgheight" jdbcType="INTEGER"/>
+            <result property="iorgcolor" column="iorgcolor" jdbcType="INTEGER"/>
+            <result property="cimei" column="cimei" jdbcType="VARCHAR"/>
+            <result property="dsynstamp" column="dSynStamp" jdbcType="TIMESTAMP"/>
+            <result property="clastlogintime" column="cLastLoginTime" jdbcType="VARCHAR"/>
+            <result property="dinfactory" column="dInFactory" jdbcType="TIMESTAMP"/>
+            <result property="nannualleavehours" column="nAnnualLeaveHours" jdbcType="DECIMAL"/>
+            <result property="coldcode" column="cOldCode" jdbcType="VARCHAR"/>
+            <result property="dannualleaveupdate" column="dAnnualLeaveUpdate" jdbcType="TIMESTAMP"/>
+            <result property="cfid" column="cfid" jdbcType="VARCHAR"/>
+            <result property="cgzzxmc" column="cGzzxmc" jdbcType="VARCHAR"/>
+            <result property="noverproduceprice" column="nOverProducePrice" jdbcType="DECIMAL"/>
+            <result property="cfkleve" column="cFKLeve" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,ibmid,cbmbh,
+        czgbh,czgxm,cbmmc,
+        cxb,ccsrq,cmz,
+        csfz,ccjgzrq,cjcgzrq,
+        crdrq,cqdhtrq,chtsxrq,
+        czw,czglx,cwhcd,
+        cbyrq,cbyxx,cbyzy,
+        cjg,cxxdz,clxdh,
+        mjkzk,mjlcf,mtczy,
+        mbrjl,gzp,cylbh,
+        cbxbh,nlggz,nbzgz,
+        nfdgz,ngwgz,nwjbt,
+        nflbt,nyybt,nzfbt,
+        ngjj,nylj,nsyj,
+        nylf,mddqk,irelawithsys,
+        iQuality,czjmpy,czjmwb,
+        tbzgid,nNumber,iCol,
+        cKqPassword,KqGroupNameID,czubie,
+        iFzr,cZjZl,cWorkSect,
+        ckqbm,ckqbh,Iflr,
+        Iysr,cbianzhi,ciccard,
+        iRepairFlag,iPunchCard,cusername,
+        cshowname,calias,cbusphone,
+        cmobphone,cnote,idisabled,
+        ilogon,ichgpwd,cPassword,
+        iIsSales,cworkqj,cpasswordhash,
+        cweixin,cqq,cemail,
+        iZwid,iorgwidth,iorgheight,
+        iorgcolor,cimei,dSynStamp,
+        cLastLoginTime,dInFactory,nAnnualLeaveHours,
+        cOldCode,dAnnualLeaveUpdate,cfid,
+        cGzzxmc,nOverProducePrice,cFKLeve,
+        iSynStamp
+    </sql>
+</mapper>
