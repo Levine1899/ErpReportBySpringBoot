@@ -57,9 +57,8 @@ public class LoginController {
 			throws IOException, ServletException {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		//        dzzgService.getShift(request, response);
-		// 获取班次
-		// TODO 后续添加班次
+		// TODO 获取班次 不绑定其他信息
+
 	}
 
 	@RequestMapping({"/getPower"})

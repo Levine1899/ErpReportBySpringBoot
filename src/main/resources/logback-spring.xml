@@ -12,7 +12,7 @@
     <jmxConfigurator/>
 
     <!-- 定义日志文件 输出位置 -->
-    <property name="log.dir" value="../logs/report/value"/>
+    <property name="log.dir" value="../logs/erp-report/"/>
     <!-- 定义日志文件 输出格式-->
     <property name="log.pattern"
               value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{80}.%method:%L - %msg%n"/>

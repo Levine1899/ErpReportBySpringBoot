@@ -46,7 +46,6 @@ public class DzzgServiceImpl extends ServiceImpl<DzzgMapper, Dzzg> implements Dz
 		String schedules = request.getParameter("banci");
 		String workTime = request.getParameter("workTime");
 		List<Dzzg> dzzgList = dzzgMapper.selectList(new LambdaQueryWrapper<Dzzg>().eq(Dzzg::getCusername, username));
-		System.out.println("dzzgList = " + dzzgList);
 		// 判断List是否非空
 		if (!CollectionUtils.isEmpty(dzzgList)) {
 			HttpSession session = request.getSession();
@@ -65,7 +64,7 @@ public class DzzgServiceImpl extends ServiceImpl<DzzgMapper, Dzzg> implements Dz
 				session.setAttribute("rolesid", dzzg.getId());
 				session.setAttribute("banci", schedules);
 				session.setAttribute("token", redisKey);
-				session.setAttribute("workTime", DateUtil.parse("2021-04-24 00:00:00").getTime());
+				session.setAttribute("workTime", DateUtil.parse(workTime).getTime());
 				request.getSession().setAttribute("user", dzzgList);
 				// TODO 从sysFactory获取工厂信息，根据cName判断跳转页面
 				redisTemplate.opsForValue()

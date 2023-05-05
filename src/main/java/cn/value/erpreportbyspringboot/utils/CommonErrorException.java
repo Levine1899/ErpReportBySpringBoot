@@ -13,6 +13,13 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class CommonErrorException extends RuntimeException {
-    private String message;
+	private String message;
 
+	public CommonErrorException(String message) {
+		super(message);
+		this.message = message;
+	}
+
+	public CommonErrorException() {
+	}
 }
